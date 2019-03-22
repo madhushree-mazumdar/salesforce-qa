@@ -27,29 +27,27 @@ public class TC4 extends ReusableClass {
 		clickButton(login,"Login");
 		Thread.sleep(2000);
 		
-		WebElement logout = findElement(By.xpath("//div[@class='userNav-buttonArrow mbrButtonArrow']"),"Logout");
-	   
-		clickButton(logout,"Menu button");
+		WebElement logout = findElement(By.xpath("//div[@class='userNav-buttonArrow mbrButtonArrow']"),"Logout");   
+		clickButton(logout,"Log Out");
 		WebElement logout1 = findElement(By.xpath("//a[@title='Logout']"),"Logout");
-		
-		clickButton(logout1,"Menu button");
+		clickButton(logout1,"Log Out");
 		Thread.sleep(4000);
 		WebElement text = findElement(By.xpath("//input[@id='username']"), "Username");
 		String t = text.getText();
-		System.out.println(t);
-		String email = "mazumdar.madhushree@gmail.com";
+		System.out.println( "email: "+t);
+		String email = "abc@techkarch.com";
 		
 		if(!t.isEmpty())
 		{
 		if(t.equals(email))
 		{
-			System.out.println("un.getText()");
-			logger.log(LogStatus.PASS,"Remember me Checkbox clicked sucessfully");
+			System.out.println("Email: "+text.getText());
+			logger.log(LogStatus.PASS,"correct email id");
 		}
 		else
 		{
-			System.out.println("un.getText()");
-			logger.log(LogStatus.FAIL,"Remember me Checkbox not checked.");
+			System.out.println("Email: "+text.getText());
+			logger.log(LogStatus.FAIL,"In correct email id.");
 		}
 		}
 		Thread.sleep(2000);
